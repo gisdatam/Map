@@ -651,3 +651,13 @@
         </script>        
     </body>
 </html>
+<script>
+  window.addEventListener("message", function (e) {
+    if (e.data === "invalidate" && typeof map !== "undefined") {
+      setTimeout(() => {
+        map.invalidateSize();
+        map.fitBounds(map.getBounds());
+      }, 200);
+    }
+  });
+</script>
