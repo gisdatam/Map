@@ -14,178 +14,18 @@
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        /* ترويسة الخريطة */
-        .map-header {
-            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
-            color: white;
-            padding: 15px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            min-height: 70px;
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .project-title {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .north-arrow {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .arrow-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            animation: pulse 2s infinite;
-        }
-        
-        .arrow-icon i {
-            color: #1a5276;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        .north-label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #e8f4fc;
-        }
-        
-        .project-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .project-badge {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        #map {
-            flex: 1;
+        html, body, #map {
             width: 100%;
-        }
-        
-        /* تعديلات للاستجابة على الأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .map-header {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-            
-            .header-content {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .project-title {
-                font-size: 18px;
-            }
-            
-            .arrow-icon {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .arrow-icon i {
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .project-title {
-                font-size: 16px;
-            }
-            
-            .project-badge {
-                font-size: 12px;
-                padding: 4px 10px;
-            }
-            
-            .north-label {
-                font-size: 10px;
-            }
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
-        <title>Ad Daimah Project Map</title>
+        <title></title>
     </head>
     <body>
-        <!-- ترويسة الخريطة -->
-        <div class="map-header">
-            <div class="header-content">
-                <div class="project-title">Ad Daimah Project</div>
-                <div class="north-arrow">
-                    <div class="arrow-icon">
-                        <i class="fas fa-arrow-up"></i>
-                    </div>
-                    <div class="north-label">North</div>
-                </div>
-            </div>
-            <div class="project-info">
-                <div class="project-badge">
-                    <i class="fas fa-map-marked-alt"></i> Interactive Map
-                </div>
-                <div class="project-badge">
-                    <i class="fas fa-satellite"></i> Live Imagery
-                </div>
-            </div>
+        <div id="map">
         </div>
-        
-        <!-- الخريطة -->
-        <div id="map"></div>
-        
-        <!-- إضافة Font Awesome للأيقونات -->
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -224,7 +64,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[31.14181762029411,47.000709065333055],[31.351514023410914,47.35940108101683]]);
+        }).fitBounds([[31.149611866336326,47.01756886506129],[31.35935358389548,47.37632374925336]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -796,7 +636,7 @@
             {label: 'Area not intersect with DB<br /><table><tr><td style="text-align: center;"><img src="legend/AreanotintersectwithDB_3_C0.png" /></td><td>C</td></tr><tr><td style="text-align: center;"><img src="legend/AreanotintersectwithDB_3_R1.png" /></td><td>R</td></tr><tr><td style="text-align: center;"><img src="legend/AreanotintersectwithDB_3_S2.png" /></td><td>S</td></tr></table>', layer: layer_AreanotintersectwithDB_3},
             {label: 'Reduction areas<br /><table><tr><td style="text-align: center;"><img src="legend/Reductionareas_2_FullClearance0.png" /></td><td>Full Clearance</td></tr><tr><td style="text-align: center;"><img src="legend/Reductionareas_2_ReducedByTS1.png" /></td><td>Reduced By TS</td></tr></table>', layer: layer_Reductionareas_2},
             {label: '<img src="legend/ProjectZonesPerimeter_1.png" /> Project Zones Perimeter', layer: layer_ProjectZonesPerimeter_1},
-            {label: "World Imagery (Clarity) Beta", layer: layer_WorldImageryClarityBeta_0},]
+            {label: "World Imagery (Clarity) Beta", layer: layer_WorldImageryClarityBeta_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
