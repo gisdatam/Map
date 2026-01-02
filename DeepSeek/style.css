@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+h2 {
+  margin-top: 0;
+  color: #60a5fa;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #1f2937;
+  padding: 8px;
+  border-bottom: 2px solid #374151;
+}
+
+.tabs button {
+  background: #374151;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.tabs button:hover {
+  background: #4b5563;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: #111827;
+  min-height: 80vh;
+}
+
+#loginBox {
+  max-width: 300px;
+  margin: 100px auto;
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#loginBox input,
+#settings input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  background: #374151;
+  color: white;
+}
+
+#loginBox button,
+#settings button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#loginBox button:hover,
+#settings button:hover {
+  background: #2563eb;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 180px;
+  text-align: center;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card b {
+  font-size: 24px;
+  color: #60a5fa;
+  display: block;
+  margin-top: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #1f2937;
+  margin: 20px 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th {
+  background: #374151;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #60a5fa;
+}
+
+td {
+  border: 1px solid #4b5563;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: rgba(55, 65, 81, 0.3);
+}
+
+tr:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.progress-container {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.progress {
+  height: 24px;
+  background: #374151;
+  border-radius: 12px;
+  margin: 10px 0 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-work {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  transition: width 0.5s ease;
+}
+
+.progress-time {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 0.5s ease;
+}
+
+.progress::after {
+  content: attr(data-percent);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+}
+
+#mapFrame {
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
